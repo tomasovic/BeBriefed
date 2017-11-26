@@ -1,17 +1,16 @@
-/* @flow */
-
 import React, { Component } from 'react';
 import {
   View,
-  Text,
   StyleSheet,
 } from 'react-native';
+import StatusScreen from './StatusScreen';
+import PropTypes from 'prop-types';
 
 export default class MainContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I'm the MainContainer component</Text>
+        <StatusScreen isUp={this.props.isUp}/>
       </View>
     );
   }
@@ -24,3 +23,7 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 });
+
+MainContainer.propTypes = {
+  isUp: PropTypes.bool.isRequired
+}
