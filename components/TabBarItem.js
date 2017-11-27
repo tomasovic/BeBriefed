@@ -9,8 +9,8 @@ import PropTypes from 'prop-types'
 
 const TabBarItem = (props) => (
   <View style={styles.container}>
-    <Icon name={props.icon} style={styles.icon} />
-    <Text style={styles.label}>{props.label}</Text>
+    <Icon name={props.icon} style={[styles.icon, props.selected && styles.selectedLabel]} />
+    <Text style={[styles.label, props.selected && styles.selectedLabel]}>{props.label}</Text>
   </View>
 );
 
