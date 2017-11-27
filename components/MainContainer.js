@@ -5,12 +5,14 @@ import {
 } from 'react-native';
 import StatusScreen from './StatusScreen';
 import PropTypes from 'prop-types';
+import TabBarContainer from './TabBarContainer'
 
 export default class MainContainer extends Component {
   render() {
     return (
       <View style={styles.container}>
         <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime}/>
+        <TabBarContainer />
       </View>
     );
   }
