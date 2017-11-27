@@ -8,11 +8,22 @@ import PropTypes from 'prop-types';
 import TabBarContainer from './TabBarContainer'
 
 export default class MainContainer extends Component {
+  _renderTab(selected, services) {
+    // find() - the first element returns true, find stops
+    const thisService = services.find(s => s.key === selected)
+    return (
+      <StatusScreen
+        isUp={thisService.isUp}
+        lastUpTime={thisService.lastUpTime} />
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime}/>
-        <TabBarContainer />
+        {/* <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime} /> */}
+        {this._renderTab(this.props.selectedService, this.props.services)}
+        <TabBarContainer onTabChange={this.props.onServiceChange} />
       </View>
     );
   }
@@ -27,6 +38,11 @@ const styles = StyleSheet.create({
 });
 
 MainContainer.propTypes = {
-  isUp: PropTypes.bool.isRequired,
-  lastUpTime: PropTypes.instanceOf(Date)
+  // the old way
+  // isUp: PropTypes.bool.isRequired,
+  // lastUpTime: PropTypes.instanceOf(Date)
+
+  selectedService: PropTypes.string.isRequired,
+  services: PropTypes.array.isRequired,
+  onServiceChange: PropTypes.func.isRequired
 }

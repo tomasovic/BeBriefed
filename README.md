@@ -13,3 +13,6 @@ Debugging https://github.com/facebook/react-devtools/tree/master/packages/react-
 
 Tabs
 npm install react-native-tabs --save
+
+By default icons for the Tab bar on the Android are cutt off so this is a must
+iconStyle={{ height: 72 }} to be placed for Tabs in the TabBarContainer
