@@ -2,7 +2,7 @@
 External API
 
 React native vector icons https://github.com/oblador/react-native-vector-icons
-npm install react-native-icons --save
+npm install react-native-vector-icons --save
 after that we need to link to our project
 react-native link
 After link, there has to be an app/assets/font folder in an android project.
