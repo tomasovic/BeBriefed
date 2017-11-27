@@ -21,9 +21,7 @@ export default class MainContainer extends Component {
       <LinearGradient colors={['#313d43', '#4a787a']} style={styles.container}>
         {/* <StatusScreen isUp={this.props.isUp} lastUpTime={this.props.lastUpTime} /> */}
         {this._renderTab(this.props.selectedService, this.props.services)}
-        <TabBarContainer onTabChange={this.props.onServiceChange}
-        selectedService = {this.props.selectedService}
-         />
+        <TabBarContainer onTabChange={this.props.onServiceChange} selectedService = {this.props.selectedService} />
       </LinearGradient>
     );
   }
