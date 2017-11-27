@@ -16,3 +16,7 @@ npm install react-native-tabs --save
 
 By default icons for the Tab bar on the Android are cutt off so this is a must
 iconStyle={{ height: 72 }} to be placed for Tabs in the TabBarContainer
+
+Linear gradient 
+npm i --save react-native-linear-gradient
+react-native link
