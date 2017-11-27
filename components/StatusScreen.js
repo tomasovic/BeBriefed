@@ -6,12 +6,14 @@ import {
   StyleSheet,
 } from 'react-native';
 import StatusIndicator from './StatusIndicator';
+import moment from 'moment'
 
 export default class StatusScreen extends Component {
   render() {
     let lastUpComponent
     if(!this.props.isUp) {
-      lastUpComponent = <Text style={styles.lastUpText}>Last up: {this.props.lastUpTime.toString()}</Text>
+      const relativeTime = moment().to(this.props.lastUpTime);
+      lastUpComponent = <Text style={styles.lastUpText}>Last up: {relativeTime}</Text>
     }
     return (
       <View style={styles.container}>
