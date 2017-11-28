@@ -20,3 +20,7 @@ iconStyle={{ height: 72 }} to be placed for Tabs in the TabBarContainer
 Linear gradient 
 npm i --save react-native-linear-gradient
 react-native link
+
+Folder API_SERVER is fake node.js api server - using for BeBriefed app.
+Install the server > npm i
+Start the server > node index.js

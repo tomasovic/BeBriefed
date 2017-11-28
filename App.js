@@ -21,6 +21,9 @@ export default class App extends Component<{}> {
     this._switchService = this._switchService.bind(this)
   }
 
+  componentDidMount() {
+    setInterval(()=> {console.log('Polling the status API')}, 5000)
+  }
   _switchService(nextService) {
     this.setState({selectedService: nextService})
   }

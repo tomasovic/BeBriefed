@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 
 const TabBarContainer = (props) => (
   // iconStyle - needs to be defined, without it android will cut off icons
-  // onSelect - this is the property of the tab. Comp is the tab which is tapped.
+  // onSelect - this is the property of the tab. comp is the tab which is tapped.
   // onTabChange - its a function from App.js propagated here
   /* switchService(nextService) {
     this.setState({selectedService: nextService})
