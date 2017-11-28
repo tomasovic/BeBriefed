@@ -19,11 +19,28 @@ export default class App extends Component<{}> {
       ]
     }
     this._switchService = this._switchService.bind(this)
+    this._fetchServiceStatus = this._fetchServiceStatus.bind(this)
   }
 
   componentDidMount() {
-    setInterval(()=> {console.log('Polling the status API')}, 5000)
+    setInterval(this._fetchServiceStatus, 5000)
   }
+
+  _fetchServiceStatus() {
+    fetch('http://10.0.3.2:8080/status')
+    .then(response => response.json())
+    .then (responseJson => {
+      const newState = this.state.services.map (s => 
+        // making a new object to put in services array
+        Object.assign(s, {
+          // true or false according to API. API is returning "up" or "down"
+        isUp:responseJson[s.key].status === 'up', 
+        lastUpTime: new Date(responseJson[s.key].lastUpTime),
+      }))
+      this.setState({ services: newState})
+    })    
+  }
+
   _switchService(nextService) {
     this.setState({selectedService: nextService})
   }
